@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko" data-theme="midnight">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>우리 캠페인</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b2545; --fg:#ffffff; --accent:#5bc0eb; --sub:#a8dadc;
+    --font:"맑은 고딕","Malgun Gothic",sans-serif;
+  }
+  [data-theme="ocean"] { --bg:#0b2545; --fg:#ffffff; --accent:#5bc0eb; --sub:#a8dadc; }
+  [data-theme="forest"]{ --bg:#14281d; --fg:#f4fff8; --accent:#7cb518; --sub:#c3e8bd; }
+  [data-theme="sunset"]{ --bg:#3d1e2e; --fg:#fff5e1; --accent:#ff8c42; --sub:#ffd9a0; }
+  [data-theme="night"] { --bg:#12121c; --fg:#f0f0ff; --accent:#9b8cff; --sub:#c9c4e8; }
+  [data-theme="midnight"]{ --bg:#181a3a; --fg:#ffffff; --accent:#8fa6ff; --sub:#b7c4e8; }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+    body{background-color:var(--bg);color:var(--fg);font-family:var(--font);overflow:hidden;
+    /* 밤하늘 우주 무늬: 별·십자별 + 은은한 은하수(옅은 보라·파랑 안개) + 별똥별 3개 + 오른쪽 아래 고리 행성. 중심은 조용히, 글은 또렷이 읽힘 */
+    background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1600'%20height='900'%20viewBox='0%200%201600%20900'%3E%3Cdefs%3E%3Cfilter%20id='soft'%20x='-60%'%20y='-60%'%20width='220%'%20height='220%'%3E%3CfeGaussianBlur%20stdDeviation='70'/%3E%3C/filter%3E%3CradialGradient%20id='pg'%20cx='0.35'%20cy='0.3'%20r='1'%3E%3Cstop%20offset='0'%20stop-color='%23e4eaff'/%3E%3Cstop%20offset='0.55'%20stop-color='%239fb2ff'/%3E%3Cstop%20offset='1'%20stop-color='%236f84d8'/%3E%3C/radialGradient%3E%3ClinearGradient%20id='mg'%20x1='0'%20y1='0'%20x2='1'%20y2='0'%3E%3Cstop%20offset='0'%20stop-color='%23ffffff'/%3E%3Cstop%20offset='0.3'%20stop-color='%23ffffff'%20stop-opacity='0.5'/%3E%3Cstop%20offset='1'%20stop-color='%23ffffff'%20stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse%20cx='290'%20cy='170'%20rx='440'%20ry='150'%20fill='%238a7dff'%20fill-opacity='0.13'%20filter='url(%23soft)'%20transform='rotate(24%20290%20170)'/%3E%3Cellipse%20cx='1340'%20cy='170'%20rx='420'%20ry='130'%20fill='%2363b4ff'%20fill-opacity='0.12'%20filter='url(%23soft)'%20transform='rotate(-14%201340%20170)'/%3E%3Cellipse%20cx='1410'%20cy='830'%20rx='430'%20ry='150'%20fill='%237d6bff'%20fill-opacity='0.1'%20filter='url(%23soft)'%20transform='rotate(-10%201410%20830)'/%3E%3Cellipse%20cx='150'%20cy='700'%20rx='330'%20ry='120'%20fill='%235ba8ff'%20fill-opacity='0.08'%20filter='url(%23soft)'%20transform='rotate(18%20150%20700)'/%3E%3Cg%20fill='%23ffffff'%3E%3Cg%20fill='%23ffffff'%20fill-opacity='0.22'%3E%3Ccircle%20cx='762.1'%20cy='695.9'%20r='2.0'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1464.3'%20cy='119.8'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1060.7'%20cy='116.7'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='847.0'%20cy='100.2'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='887.2'%20cy='246.1'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='421.3'%20cy='828.3'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1559.5'%20cy='254.7'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='952.3'%20cy='437.2'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='37.9'%20cy='876.5'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1565.3'%20cy='284.4'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='460.9'%20cy='214.8'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1335.4'%20cy='357.3'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1157.2'%20cy='487.2'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1065.7'%20cy='787.6'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='204.3'%20cy='350.1'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1174.3'%20cy='553.7'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1458.4'%20cy='669.7'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1088.9'%20cy='43.2'%20r='2.0'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='45.8'%20cy='686.4'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='294.1'%20cy='314.8'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1208.1'%20cy='293.7'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1505.2'%20cy='172.9'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='667.7'%20cy='205.8'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='389.3'%20cy='323.8'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1339.4'%20cy='645.5'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1089.0'%20cy='149.3'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='386.2'%20cy='165.5'%20r='2.0'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='829.8'%20cy='649.6'%20r='2.0'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='960.6'%20cy='655.8'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='510.3'%20cy='853.7'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1421.8'%20cy='676.7'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='115.3'%20cy='227.5'%20r='1.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1200.3'%20cy='446.0'%20r='2.0'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='218.2'%20cy='167.5'%20r='1.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1088.8'%20cy='766.2'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='282.2'%20cy='113.2'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='335.6'%20cy='762.0'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1034.5'%20cy='155.5'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='284.0'%20cy='855.1'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='725.3'%20cy='161.3'%20r='1.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='427.4'%20cy='684.3'%20r='2.0'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1562.9'%20cy='301.1'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1103.2'%20cy='293.0'%20r='1.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1449.0'%20cy='448.2'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='648.7'%20cy='136.1'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1289.3'%20cy='457.2'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1113.7'%20cy='22.1'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1140.3'%20cy='423.4'%20r='1.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1412.0'%20cy='859.3'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='828.2'%20cy='168.5'%20r='1.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='613.6'%20cy='79.5'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='207.0'%20cy='326.7'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='261.8'%20cy='151.4'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='748.9'%20cy='778.2'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='917.0'%20cy='783.9'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1354.4'%20cy='10.7'%20r='1.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='997.0'%20cy='654.0'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1544.4'%20cy='599.7'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3C/g%3E%3Cg%20fill='%23ffffff'%20fill-opacity='0.42'%3E%3Ccircle%20cx='937.7'%20cy='245.8'%20r='2.0'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1432.5'%20cy='771.1'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1571.6'%20cy='572.4'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='79.2'%20cy='671.7'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='73.7'%20cy='365.2'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='886.4'%20cy='856.7'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='156.3'%20cy='595.7'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='335.4'%20cy='105.6'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1377.0'%20cy='257.7'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1212.6'%20cy='391.1'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1540.7'%20cy='63.5'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='571.0'%20cy='308.8'%20r='2.0'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1242.0'%20cy='212.0'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='773.9'%20cy='87.4'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='89.1'%20cy='28.4'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='210.2'%20cy='47.3'%20r='1.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1023.8'%20cy='241.7'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='663.3'%20cy='615.1'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='387.1'%20cy='43.3'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='923.1'%20cy='231.5'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1081.0'%20cy='213.1'%20r='2.0'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='333.7'%20cy='143.3'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1257.9'%20cy='773.7'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='495.9'%20cy='767.3'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='847.0'%20cy='105.6'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='190.7'%20cy='614.2'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='798.8'%20cy='768.2'%20r='2.0'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1321.0'%20cy='844.5'%20r='1.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1325.1'%20cy='630.4'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1508.5'%20cy='426.3'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1575.5'%20cy='679.2'%20r='1.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1489.3'%20cy='581.3'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='430.4'%20cy='654.8'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1101.3'%20cy='622.9'%20r='2.3'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3C/g%3E%3Cg%20fill='%23ffffff'%20fill-opacity='0.62'%3E%3Ccircle%20cx='1182.6'%20cy='653.9'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1384.9'%20cy='512.5'%20r='1.1'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='504.3'%20cy='635.0'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1414.1'%20cy='286.1'%20r='1.5'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='238.4'%20cy='880.6'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='670.0'%20cy='787.3'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='1029.4'%20cy='671.6'%20r='1.7'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3Ccircle%20cx='993.8'%20cy='33.9'%20r='0.9'%20fill='%23ffffff'%20fill-opacity='1'/%3E%3C/g%3E%3C/g%3E%3Cpath%20transform='translate(120%20150)'%20d='M0%20-15%20C1.2%20-4.5%204.5%20-1.2%2015%200%20C4.5%201.2%201.2%204.5%200%2015%20C-1.2%204.5%20-4.5%201.2%20-15%200%20C-4.5%20-1.2%20-1.2%20-4.5%200%20-15%20Z'%20fill='%23ffffff'%20fill-opacity='0.85'/%3E%3Cpath%20transform='translate(392%2096)'%20d='M0%20-10%20C0.8%20-3.0%203.0%20-0.8%2010%200%20C3.0%200.8%200.8%203.0%200%2010%20C-0.8%203.0%20-3.0%200.8%20-10%200%20C-3.0%20-0.8%20-0.8%20-3.0%200%20-10%20Z'%20fill='%23dbe4ff'%20fill-opacity='0.65'/%3E%3Cpath%20transform='translate(655%2068)'%20d='M0%20-13%20C1.0%20-3.9%203.9%20-1.0%2013%200%20C3.9%201.0%201.0%203.9%200%2013%20C-1.0%203.9%20-3.9%201.0%20-13%200%20C-3.9%20-1.0%20-1.0%20-3.9%200%20-13%20Z'%20fill='%23ffffff'%20fill-opacity='0.8'/%3E%3Cpath%20transform='translate(985%2052)'%20d='M0%20-10%20C0.8%20-3.0%203.0%20-0.8%2010%200%20C3.0%200.8%200.8%203.0%200%2010%20C-0.8%203.0%20-3.0%200.8%20-10%200%20C-3.0%20-0.8%20-0.8%20-3.0%200%20-10%20Z'%20fill='%23ffffff'%20fill-opacity='0.7'/%3E%3Cpath%20transform='translate(1222%2096)'%20d='M0%20-14%20C1.1%20-4.2%204.2%20-1.1%2014%200%20C4.2%201.1%201.1%204.2%200%2014%20C-1.1%204.2%20-4.2%201.1%20-14%200%20C-4.2%20-1.1%20-1.1%20-4.2%200%20-14%20Z'%20fill='%23ffe9c9'%20fill-opacity='0.8'/%3E%3Cpath%20transform='translate(1442%20152)'%20d='M0%20-11%20C0.9%20-3.3%203.3%20-0.9%2011%200%20C3.3%200.9%200.9%203.3%200%2011%20C-0.9%203.3%20-3.3%200.9%20-11%200%20C-3.3%20-0.9%20-0.9%20-3.3%200%20-11%20Z'%20fill='%23dbe4ff'%20fill-opacity='0.75'/%3E%3Cpath%20transform='translate(168%20302)'%20d='M0%20-9%20C0.7%20-2.7%202.7%20-0.7%209%200%20C2.7%200.7%200.7%202.7%200%209%20C-0.7%202.7%20-2.7%200.7%20-9%200%20C-2.7%20-0.7%20-0.7%20-2.7%200%20-9%20Z'%20fill='%23ffffff'%20fill-opacity='0.6'/%3E%3Cpath%20transform='translate(1230%20272)'%20d='M0%20-9%20C0.7%20-2.7%202.7%20-0.7%209%200%20C2.7%200.7%200.7%202.7%200%209%20C-0.7%202.7%20-2.7%200.7%20-9%200%20C-2.7%20-0.7%20-0.7%20-2.7%200%20-9%20Z'%20fill='%23ffffff'%20fill-opacity='0.55'/%3E%3Cpath%20transform='translate(1516%20306)'%20d='M0%20-9%20C0.7%20-2.7%202.7%20-0.7%209%200%20C2.7%200.7%200.7%202.7%200%209%20C-0.7%202.7%20-2.7%200.7%20-9%200%20C-2.7%20-0.7%20-0.7%20-2.7%200%20-9%20Z'%20fill='%23dbe4ff'%20fill-opacity='0.55'/%3E%3Cpath%20transform='translate(58%20518)'%20d='M0%20-8%20C0.6%20-2.4%202.4%20-0.6%208%200%20C2.4%200.6%200.6%202.4%200%208%20C-0.6%202.4%20-2.4%200.6%20-8%200%20C-2.4%20-0.6%20-0.6%20-2.4%200%20-8%20Z'%20fill='%23ffffff'%20fill-opacity='0.5'/%3E%3Cpath%20transform='translate(82%20704)'%20d='M0%20-9%20C0.7%20-2.7%202.7%20-0.7%209%200%20C2.7%200.7%200.7%202.7%200%209%20C-0.7%202.7%20-2.7%200.7%20-9%200%20C-2.7%20-0.7%20-0.7%20-2.7%200%20-9%20Z'%20fill='%23ffffff'%20fill-opacity='0.55'/%3E%3Cpath%20transform='translate(600%20806)'%20d='M0%20-10%20C0.8%20-3.0%203.0%20-0.8%2010%200%20C3.0%200.8%200.8%203.0%200%2010%20C-0.8%203.0%20-3.0%200.8%20-10%200%20C-3.0%20-0.8%20-0.8%20-3.0%200%20-10%20Z'%20fill='%23ffffff'%20fill-opacity='0.65'/%3E%3Cpath%20transform='translate(984%20792)'%20d='M0%20-9%20C0.7%20-2.7%202.7%20-0.7%209%200%20C2.7%200.7%200.7%202.7%200%209%20C-0.7%202.7%20-2.7%200.7%20-9%200%20C-2.7%20-0.7%20-0.7%20-2.7%200%20-9%20Z'%20fill='%23ffffff'%20fill-opacity='0.55'/%3E%3Cpath%20transform='translate(1180%20704)'%20d='M0%20-8%20C0.6%20-2.4%202.4%20-0.6%208%200%20C2.4%200.6%200.6%202.4%200%208%20C-0.6%202.4%20-2.4%200.6%20-8%200%20C-2.4%20-0.6%20-0.6%20-2.4%200%20-8%20Z'%20fill='%23ffffff'%20fill-opacity='0.5'/%3E%3Cpath%20transform='translate(1496%20470)'%20d='M0%20-8%20C0.6%20-2.4%202.4%20-0.6%208%200%20C2.4%200.6%200.6%202.4%200%208%20C-0.6%202.4%20-2.4%200.6%20-8%200%20C-2.4%20-0.6%20-0.6%20-2.4%200%20-8%20Z'%20fill='%23ffffff'%20fill-opacity='0.5'/%3E%3Cpath%20transform='translate(248%20612)'%20d='M0%20-7%20C0.6%20-2.1%202.1%20-0.6%207%200%20C2.1%200.6%200.6%202.1%200%207%20C-0.6%202.1%20-2.1%200.6%20-7%200%20C-2.1%20-0.6%20-0.6%20-2.1%200%20-7%20Z'%20fill='%23ffffff'%20fill-opacity='0.45'/%3E%3Cpath%20transform='translate(520%20340)'%20d='M0%20-6%20C0.5%20-1.8%201.8%20-0.5%206%200%20C1.8%200.5%200.5%201.8%200%206%20C-0.5%201.8%20-1.8%200.5%20-6%200%20C-1.8%20-0.5%20-0.5%20-1.8%200%20-6%20Z'%20fill='%23ffffff'%20fill-opacity='0.4'/%3E%3Cg%20transform='translate(1475%20800)'%20opacity='0.85'%3E%3Ccircle%20r='34'%20fill='url(%23pg)'/%3E%3Ccircle%20cx='8'%20cy='-8'%20r='12'%20fill='%23ffffff'%20fill-opacity='0.08'/%3E%3Cg%20transform='rotate(-18)'%3E%3Cellipse%20rx='60'%20ry='15'%20fill='none'%20stroke='%23c9d4ff'%20stroke-width='6'%20stroke-opacity='0.55'/%3E%3C/g%3E%3Cg%20transform='rotate(-18)'%3E%3Cpath%20d='M%20-60%200%20A%2060%2015%200%200%201%2060%200'%20fill='none'%20stroke='%23c9d4ff'%20stroke-width='6'%20stroke-opacity='0.75'/%3E%3C/g%3E%3C/g%3E%3Cg%20transform='translate(1260%20118)%20rotate(-36)'%3E%3Cline%20x1='0'%20y1='0'%20x2='235'%20y2='0'%20stroke='url(%23mg)'%20stroke-width='2.4'%20stroke-linecap='round'/%3E%3Ccircle%20cx='0'%20cy='0'%20r='2.7'%20fill='%23ffffff'/%3E%3Ccircle%20cx='0'%20cy='0'%20r='5.7'%20fill='%23ffffff'%20fill-opacity='0.30'/%3E%3C/g%3E%3Cg%20transform='translate(455%20205)%20rotate(-29)'%3E%3Cline%20x1='0'%20y1='0'%20x2='168'%20y2='0'%20stroke='url(%23mg)'%20stroke-width='2.0'%20stroke-linecap='round'/%3E%3Ccircle%20cx='0'%20cy='0'%20r='2.1'%20fill='%23ffffff'/%3E%3Ccircle%20cx='0'%20cy='0'%20r='4.4'%20fill='%23ffffff'%20fill-opacity='0.30'/%3E%3C/g%3E%3Cg%20transform='translate(1440%20290)%20rotate(-40)'%3E%3Cline%20x1='0'%20y1='0'%20x2='132'%20y2='0'%20stroke='url(%23mg)'%20stroke-width='1.7'%20stroke-linecap='round'/%3E%3Ccircle%20cx='0'%20cy='0'%20r='1.8'%20fill='%23ffffff'/%3E%3Ccircle%20cx='0'%20cy='0'%20r='3.8'%20fill='%23ffffff'%20fill-opacity='0.30'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:center;background-size:cover;}
+  .slide{
+    position:absolute;inset:0;display:none;
+    flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;padding:6vh 8vw;gap:2.4vh;
+  }
+  .slide.on{display:flex}
+  /* 제목 글자 강조 — 테마 변수만 사용, 배경·내용·장 수는 그대로 */
+  h1{
+    font-family:"Jua","맑은 고딕","Malgun Gothic",sans-serif;
+    font-size:9.5vh;line-height:1.12;font-weight:900;letter-spacing:.02em;
+    color:var(--accent);
+    text-shadow:0 0 3vh color-mix(in srgb,var(--accent) 55%,transparent);
+  }
+  /* 글자 그라데이션이 되는 브라우저에서만: 흰 빛 → 강조색 흐름 + 은은한 빛 */
+  @supports ((-webkit-background-clip:text) or (background-clip:text)){
+    h1{
+      color:transparent;-webkit-text-fill-color:transparent;
+      -webkit-background-clip:text;background-clip:text;
+      background-image:linear-gradient(180deg,var(--fg) 0%,var(--sub) 55%,var(--accent) 100%);
+      text-shadow:none;
+      filter:drop-shadow(0 0 2.4vh color-mix(in srgb,var(--accent) 45%,transparent));
+    }
+  }
+  /* 표지 제목 아래 빛나는 밑줄 */
+  h1::after{
+    content:"";display:block;width:min(46vw,52vh);height:.5vh;margin:1.8vh auto 0;
+    border-radius:99px;
+    background:linear-gradient(90deg,transparent,var(--accent) 26%,var(--fg) 50%,var(--accent) 74%,transparent);
+    box-shadow:0 0 1.8vh var(--accent);
+  }
+  h2{
+    font-family:"Jua","맑은 고딕","Malgun Gothic",sans-serif;
+    font-size:5.8vh;line-height:1.22;font-weight:800;letter-spacing:.015em;
+    color:var(--accent);
+    text-shadow:0 0 2.2vh color-mix(in srgb,var(--accent) 40%,transparent);
+  }
+  @supports ((-webkit-background-clip:text) or (background-clip:text)){
+    h2{
+      color:transparent;-webkit-text-fill-color:transparent;
+      -webkit-background-clip:text;background-clip:text;
+      background-image:linear-gradient(180deg,var(--fg) 0%,var(--sub) 60%,var(--accent) 100%);
+      text-shadow:none;
+      filter:drop-shadow(0 0 1.4vh color-mix(in srgb,var(--accent) 30%,transparent));
+    }
+  }
+  p,li{font-size:3.4vh;line-height:1.5;color:var(--fg)}
+  ul{text-align:left;max-width:80%}
+  li{margin:1vh 0}
+  .team{font-size:3vh;color:var(--sub)}
+  .cover-q{font-size:3.4vh;line-height:1.5;color:var(--accent)}
+  .media{max-width:70%;max-height:52vh;border-radius:1.6vh}
+  /* 에코의 하루: 그림 3장을 나란히 배치 */
+  .day-row{display:flex;justify-content:center;align-items:stretch;gap:3vw;width:100%}
+  .day-card{display:flex;flex-direction:column;align-items:center;gap:1.2vh;margin:0;flex:0 1 26vw}
+  .day-card img{max-width:100%;max-height:36vh;border-radius:1.6vh;display:block}
+  .day-card figcaption{font-size:2.7vh;line-height:1.3;color:var(--sub)}
+  /* 우리의 다짐(표어) 장 전용: 표어 문구를 크게 강조 */
+  .slogan-line{font-size:5.8vh;line-height:1.4;font-weight:700}
+  .slogan-main{color:var(--accent)}
+  .slogan-sub{color:var(--fg)}
+  /* 우리의 다짐 장 전용: 표어 옆에 에코 그림을 조그맣게 */
+  .pledge-slide .slogan-line{white-space:nowrap}
+  .pledge-row{display:flex;align-items:center;justify-content:center;gap:3vw}
+  .pledge-slogans{display:flex;flex-direction:column;align-items:center;gap:1.4vh;flex:0 0 auto}
+  .pledge-eco{flex:0 0 auto;height:10vh;width:auto;border-radius:1.4vh}
+  /* 이렇게 실천해요 장 전용: 읽기 쉽게 글자를 크게, 줄 간격 넉넉히 */
+  .practice-slide ul{display:flex;flex-direction:column;align-items:flex-start;gap:2.6vh;max-width:86%}
+  .practice-slide li{font-size:4.1vh;line-height:1.6;font-weight:700;margin:0}
+  .hint{position:fixed;right:2vw;bottom:2vh;font-size:1.8vh;color:var(--sub);opacity:.7}
+  .page{position:fixed;left:2vw;bottom:2vh;font-size:1.8vh;color:var(--sub);opacity:.7}
+  /* 참고 영상 안내 장 전용: 출처 표기 */
+  .src-note{font-size:2.2vh;color:var(--sub);opacity:.85}
+  /* 영상 장 전용: 도로 무단투기 뉴스 */
+  .vd-note{color:var(--accent);font-size:2.9vh;line-height:1.4;max-width:80%}
+  .vd-frame{width:min(80vw,82vh);aspect-ratio:16/9;margin-top:1vh;
+    border-radius:1.6vh;overflow:hidden;box-shadow:0 0 0 .5vh rgba(255,255,255,.08)}
+  .vd-frame iframe{display:block;width:100%;height:100%;border:0}
+</style>
+</head>
+<body>
+
+<!-- 1. 표지 -->
+<section class="slide on">
+  <h1>우리 동네를 지켜줘!</h1>
+  <p class="team">9조 구조대</p>
+</section>
+
+<!-- 2. 참고 영상 안내 -->
+<section class="slide">
+  <h2>지금부터 참고 영상을 하나 시청하겠습니다.</h2>
+  <p>이 영상은 우리 동네의 쓰레기 문제를 보여주는 뉴스예요.</p>
+  <p class="src-note">출처: 유튜브 — 몰래 버린 쓰레기에… 골목길 '악취 가득'</p>
+</section>
+
+<!-- 3. 골목길 무단투기 뉴스 영상 -->
+<section class="slide">
+  <h2>몰래 버린 쓰레기, 우리 골목 이야기</h2>
+  <p class="vd-note">몰래 버린 쓰레기 때문에 우리 동네 골목이 지저분해지고 있어요.</p>
+  <div class="vd-frame">
+    <iframe src="https://www.youtube.com/embed/bLHdOac8I0I"
+      title="골목길 무단 투기 쓰레기 악취 뉴스 영상"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- 4. 목차 -->
+<section class="slide">
+  <h2>목차</h2>
+  <ul>
+    <li>우리가 찾은 문제</li>
+    <li>우리의 질문과 해결방법</li>
+    <li>로봇 '에코' 소개와 하루</li>
+    <li>우리의 캠페인</li>
+    <li>우리의 실천 약속</li>
+  </ul>
+</section>
+
+<!-- 5. 우리가 찾은 문제 -->
+<section class="slide">
+  <h2>우리가 찾은 문제</h2>
+  <p>아이들이 음식·장난감 포장 비닐을 아무 데나 땅에 버려요.</p>
+  <img class="media" src="assets/그림-6.jpg" alt="무심하게 손으로 비닐을 툭 던지는 모습">
+  <p class="cover-q">주변에서 이런 모습을 보지 않았나요?</p>
+</section>
+
+<!-- 6. 우리가 찾은 문제 (길을 찾지 못하는 문제) -->
+<section class="slide">
+  <h2>우리가 찾은 문제</h2>
+  <p>아이들이 길을 찾지 못해 헤매고 있어요.</p>
+  <img class="media" src="assets/그림-9.jpg" alt="머리 위에 갈래길 생각 말풍선이 있는 헤매는 사람">
+  <p class="cover-q">이런 모습은요?</p>
+</section>
+
+<!-- 7. 우리의 질문 -->
+<section class="slide">
+  <h2>우리의 질문</h2>
+  <p>어떻게 하면 환경오염 쓰레기를 줄이고, 길 안내까지 할 수 있을까?</p>
+</section>
+
+<!-- 8. 우리의 해결방법 -->
+<section class="slide">
+  <h2>우리의 해결방법</h2>
+  <p>다양한 용도로 편리하게 사용할 수 있는 로봇을 만들면 어떨까?</p>
+</section>
+
+<!-- 9. 우리가 만든 것 -->
+<section class="slide">
+  <h2>우리가 만든 것</h2>
+  <img class="media" src="assets/그림-1.jpg" alt="에코 로봇 그림">
+  <p>우리가 만든 로봇 에코</p>
+</section>
+
+<!-- 10. 다용도 로봇 '에코'의 역할 -->
+<section class="slide">
+  <h2>다용도 로봇 '에코'의 역할</h2>
+  <p>로봇 에코의 가장 중요한 일은 쓰레기를 주워 우리 동네를 깨끗하게 지키는 거예요!</p>
+  <ul>
+    <li>바닥에 떨어진 쓰레기를 주워요</li>
+    <li>주운 쓰레기는 쓰레기통에 넣어요</li>
+  </ul>
+  <p>길 안내나 정보 알림, 별 설명은 곁들여서 하는 작은 도움이에요.</p>
+</section>
+
+<!-- 11. 에코의 하루 -->
+<section class="slide">
+  <h2>에코의 하루</h2>
+  <p>아침부터 밤까지 우리 동네를 지켜요!</p>
+  <div class="day-row">
+    <figure class="day-card">
+      <img src="assets/그림-12.jpg" alt="에코가 비닐을 쓰레기통에 버리는 모습">
+      <figcaption>아침 · 쓰레기 줍기</figcaption>
+    </figure>
+    <figure class="day-card">
+      <img src="assets/그림-2.jpg" alt="에코가 길을 안내하는 모습">
+      <figcaption>낮 · 길 안내</figcaption>
+    </figure>
+    <figure class="day-card">
+      <img src="assets/그림-15.jpg" alt="에코가 별을 설명하는 밤 모습">
+      <figcaption>밤 · 별 설명</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 12. 우리의 캠페인 -->
+<section class="slide">
+  <h2>우리의 캠페인</h2>
+  <p>쓰레기 무단 투기를 줄이자</p>
+</section>
+
+<!-- 13. 이렇게 실천해요 -->
+<section class="slide practice-slide">
+  <h2>이렇게 실천해요</h2>
+  <ul>
+    <li>오늘부터 환경을 생각하며 쓰레기를 줄여요</li>
+    <li>"나 하나라면"이라는 생각은 버려요</li>
+    <li>"나 하나라도"라는 태도로 하루하루 지구를 지켜요</li>
+  </ul>
+</section>
+
+<!-- 14. 우리의 다짐 (표어) -->
+<section class="slide pledge-slide">
+  <h2>우리의 다짐</h2>
+  <div class="pledge-row">
+    <div class="pledge-slogans">
+      <p class="slogan-line slogan-main">나 하나라도, 지구를 지켜요!</p>
+      <p class="slogan-line slogan-sub">쓰레기는 툭 던지지 말고, 쓰레기통에 넣읍시다!</p>
+    </div>
+    <img class="pledge-eco" src="assets/그림-2.jpg" alt="로봇 에코가 길을 안내하는 모습">
+  </div>
+</section>
+
+<!-- 15. 우리 팀 -->
+<section class="slide">
+  <h2>우리 팀</h2>
+  <p class="team">9조 구조대</p>
+  <p>들어 주셔서 고맙습니다!</p>
+</section>
+
+<!-- 여기에 친구들 슬라이드가 들어갑니다 (합쳐줘 를 쓰면 아래에 채워져요) -->
+
+<div class="page"><span id="now">1</span> / <span id="all">15</span></div>
+<div class="hint">← → 눌러서 넘기기</div>
+
+<!-- 움직임 라이브러리. 없어도 발표자료는 그대로 보인다 -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.slide');
+  var i = 0;
+  document.getElementById('all').textContent = slides.length;
+
+  // 움직임을 불편해하는 사람을 위한 설정을 존중한다
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 장이 나타날 때 안쪽 요소가 아래에서 살짝 올라온다.
+  // GSAP 이 없거나(CDN 실패) 사용자가 움직임을 껐으면 그냥 보여준다.
+  // 무슨 일이 있어도 글은 보여야 한다. 인라인 스타일을 지워 원래 모습으로 돌린다.
+  function 무조건보이기(items){
+    for (var k = 0; k < items.length; k++) {
+      items[k].style.opacity = '';
+      items[k].style.transform = '';
+      items[k].style.translate = '';
+      items[k].style.rotate = '';
+      items[k].style.scale = '';
+    }
+  }
+
+  function animateIn(slide){
+    var items = slide.children;
+
+    // 움직임을 껐거나, CDN 이 실패했거나, 화면에 안 보이는 탭이면 그냥 보여준다.
+    // (안 보이는 탭에서는 브라우저가 애니메이션을 멈춰서 opacity 0 으로 굳는다)
+    if (reduceMotion || !window.gsap || document.hidden) {
+      무조건보이기(items);
+      return;
+    }
+
+    gsap.killTweensOf(items);
+    gsap.fromTo(items,
+      { opacity: 0, y: 18 },
+      { opacity: 1, y: 0, duration: 0.45, stagger: 0.08, ease: 'power2.out', clearProps: 'all' }
+    );
+
+    // 마지막 안전망: 1.2초 뒤에도 아직 투명하면 애니메이션을 포기하고 보여준다.
+    // 발표 중에 글이 안 보이는 것보다 움직임이 없는 게 낫다.
+    clearTimeout(slide.__safety);
+    slide.__safety = setTimeout(function(){
+      if (items.length && getComputedStyle(items[0]).opacity !== '1') {
+        gsap.killTweensOf(items);
+        무조건보이기(items);
+      }
+    }, 1200);
+  }
+
+  // 탭으로 돌아왔을 때 굳어 있으면 풀어 준다
+  document.addEventListener('visibilitychange', function(){
+    if (!document.hidden) { animateIn(slides[i]); }
+  });
+
+  function show(n){
+    if (n < 0) n = 0;
+    if (n > slides.length - 1) n = slides.length - 1;
+    slides[i].classList.remove('on');
+    i = n;
+    slides[i].classList.add('on');
+    document.getElementById('now').textContent = i + 1;
+    animateIn(slides[i]);
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { show(i+1); }
+    if (e.key === 'ArrowLeft'  || e.key === 'PageUp')                   { show(i-1); }
+    if (e.key === 'Home') { show(0); }
+    if (e.key === 'End')  { show(slides.length-1); }
+  });
+  document.addEventListener('click', function(e){
+    show(e.clientX < window.innerWidth/3 ? i-1 : i+1);
+  });
+
+  // 첫 장에도 등장 애니메이션을 걸어 준다.
+  // CDN 이 늦게 도착할 수 있으니 load 까지 기다린다.
+  if (document.readyState === 'complete') { animateIn(slides[0]); }
+  else { window.addEventListener('load', function(){ animateIn(slides[0]); }); }
+})();
+</script>
+</body>
+</html>
